@@ -11,11 +11,11 @@
 #[localmachine]
 #localhost
 
-[ifistestdev]
-gscgigdcvhtst01.mgmt.cihs.gov.on.ca
+[testdev]
+testdev01
  
-[ifistestprod]
-itstest.mgmt.cihs.gov.on.ca
+[testprod]
+testprod01
 
 
 # Ex 1: Ungrouped hosts, specify before any group headers.

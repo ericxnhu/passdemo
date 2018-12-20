@@ -7,14 +7,14 @@
    - name: "username"
      prompt: "Please enter the username"
      private: no
-     default: getronics
+     default: username1
    - name: "password"
      prompt: "Please enter the password"
      private: yes
      encrypt: "sha512_crypt"
      confirm: yes
      salt_size: 7
-     salt: "ifis_salt"
+     salt: "dsfjbn"
 
   tasks:
    - name: Update root Password

@@ -7,4 +7,4 @@
      user:
       name: root
       update_password: always
-      password: "{{lookup ('file', 'files/ppe_password_file.txt') | password_hash('sha512', 'ifis_salt')}}"
+      password: "{{lookup ('file', 'files/ppe_password_file.txt') | password_hash('sha512', 'seasalt')}}"

@@ -7,7 +7,7 @@
    - name: "username"
      prompt: "Please enter the username"
      private: no
-     default: getronics
+     default: username1
    - name: "password"
      prompt: "Please enter the password"
      private: yes
@@ -15,7 +15,7 @@
 
   tasks:
    - name: hash the password
-     shell: openssl passwd -1 -salt ifis_salt "{{password}}"
+     shell: openssl passwd -1 -salt seasalt "{{password}}"
      register: pass
    - name: Update root Password
      user:

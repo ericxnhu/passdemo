@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  
+  vars_prompt:
+   - name: "username"
+     prompt: "Please enter the username"
+     private: no
+     default: getronics
+   - name: "password"
+     prompt: "Please enter the password"
+     private: yes
+     encrypt: "sha512_crypt"
+     confirm: yes
+     salt_size: 7
+
+  tasks:
+   - debug: msg="{{password}}"

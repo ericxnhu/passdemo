@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+   - name: Update root Password
+     user:
+      name: root
+      update_password: always
+      password: "{{lookup ('file', 'files/prod_password_file.txt') | password_hash('sha512', 'ifis_salt')}}"

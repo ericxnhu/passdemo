@@ -1,0 +1,9 @@
+---
+- name: generate password
+  hosts: localhost
+  gather_facts: False
+  vars:
+    my_pass: "{{ lookup('password', 'password_file.txt length=12 chars=ascii_letters,digits,hexdigits,punctuation') }}"
+  tasks:
+  - debug:
+      msg: "{{my_pass}}"

@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: delete multiple users
+    user: 
+     name: "{{item}}"
+     state: absent
+    with_items:
+      - elevated1
+      - elevated2
+      - elevated3
+

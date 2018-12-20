@@ -1,0 +1,16 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: create multiple users for demo
+    user: 
+     name: "{{item}}"
+     groups: capplan
+     append: yes
+     password: $1$Sampath$zyIc8nUhsB0urEKYNlktk.
+    with_items:
+      - elevated1
+      - elevated2
+      - elevated3
+

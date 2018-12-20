@@ -1,0 +1,6 @@
+- name: Update root Password
+  user: 
+   name: "{{testaccount}}"
+   update_password: always 
+   password: "{{testpassword}}"
+

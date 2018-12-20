@@ -1,0 +1,24 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  
+  vars_prompt:
+   - name: "username"
+     prompt: "Please enter the username"
+     private: no
+     default: getronics
+   - name: "password"
+     prompt: "Please enter the password"
+     private: yes
+     confirm: yes
+
+  tasks:
+   - name: hash the password
+     shell: openssl passwd -1 -salt ifis_salt "{{password}}"
+     register: pass
+   - name: Update root Password
+     user:
+      name: "{{username}}"
+      update_password: always
+      password: "{{pass.stdout}}"

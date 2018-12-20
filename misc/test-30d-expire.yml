@@ -1,0 +1,20 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: check if user exists
+    shell: id -u "{{item}}"
+    register: user_exists
+    ignore_errors: true
+    with_items:
+     - elevated1
+     - elevated2
+     - elevated3 
+    notify: 
+     - set 30d expire
+
+  handlers:
+  - name: set 30d expire
+    command: passwd -x 30 "{{item}}"
+    when: user_exists.rc == 0

@@ -1,0 +1,6 @@
+- name: Update root Password
+  user: 
+   name: root
+   update_password: always 
+   password: "{{lookup ('file', 'files/password_file.txt') | password_hash('sha512', 'ifis_salt')}}"
+

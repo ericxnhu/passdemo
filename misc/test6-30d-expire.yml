@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: set 30d expire
+    command: passwd -x 20 "{{item}}"
+    with_items:
+     - elevated1
+     - elevated2
+     - elevated3
+

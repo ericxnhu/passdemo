@@ -1,0 +1,9 @@
+- name: Update root Password
+  vars:
+   testaccount: root
+   testpassword: $5$dnRfcZse$Bls32l8/3swiq8HCElEB.PukdxdPs8AVB9cp4oYwRJC222
+  user: 
+   name: "{{testaccount}}"
+   update_password: always 
+   password: "{{testpassword}}"
+

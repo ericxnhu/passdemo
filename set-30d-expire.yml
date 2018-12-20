@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: set password expire in 30 days
+    command: passwd -x 30 "{{item}}"
+    with_items:
+     - elevated1
+     - elevated2
+     - elevated3 

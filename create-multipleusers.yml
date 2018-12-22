@@ -6,7 +6,7 @@
   - name: create multiple users for demo
     user: 
      name: "{{item}}"
-     groups: capplan
+     groups: nobody
      append: yes
      password: $1$Sampath$zyIc8nUhsB0urEKYNlktk.
     with_items:

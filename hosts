@@ -7,16 +7,6 @@
 #   - Groups of hosts are delimited by [header] elements
 #   - You can enter hostnames or ip addresses
 #   - A hostname/ip can be a member of multiple groups
-#
-#[localmachine]
-#localhost
-
-[testdev]
-testdev01
- 
-[testprod]
-testprod01
-
 
 # Ex 1: Ungrouped hosts, specify before any group headers.
 
@@ -24,6 +14,14 @@ testprod01
 ## blue.example.com
 ## 192.168.100.1
 ## 192.168.100.10
+
+[rhel73servers]
+rhel73sat
+rhel73idm
+
+[rhel74servers]
+rhel74satg
+rhel7idm
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 

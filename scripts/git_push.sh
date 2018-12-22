@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/hue/mygit/solaris/IFIS/passdemo/roles/changepass/files
+cd /home/hue/mygit/passdemo/files
 
 git commit -a
 
